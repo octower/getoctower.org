@@ -1,0 +1,9 @@
+vendor
+silex.phar
+octower-src/
+web/octower.phar
+web/version
+web/apidoc
+web/book.pdf
+cache/
+silex.log
