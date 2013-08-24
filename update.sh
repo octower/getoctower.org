@@ -5,7 +5,7 @@ buildscript="bin/compile"
 buildphar="octower.phar"
 target="web"
 repo="https://github.com/octower/octower.git"
-composer="composer"
+composer="php composer.phar"
 
 # init
 if [ ! -d "$root/$build" ]
@@ -16,11 +16,16 @@ fi
 
 cd "$root/$build"
 
+if [ ! -d "$root/$build/composer.phar" ]
+then
+    curl -sS https://getcomposer.org/installer | php
+fi
+
 # update master
 git fetch -q origin && \
 git fetch --tags -q origin && \
 git checkout develop -q && \
-git rebase origin/develop -q && \
+#git rebase origin/develop -q && \
 $composer install -q && \
 php -d phar.readonly=0 $buildscript && \
 mv $buildphar "$root/$target/$buildphar" && \
