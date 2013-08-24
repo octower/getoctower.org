@@ -281,7 +281,7 @@ function installOctower($installDir, $quiet)
             out("Downloading...", 'info');
         }
 
-        $source = (extension_loaded('openssl') ? 'https' : 'http').'://getoctower.org/octower.phar';
+        $source = 'http://getoctower.org/octower.phar';
         $errorHandler = new ErrorHandler();
         set_error_handler(array($errorHandler, 'handleError'));
 
