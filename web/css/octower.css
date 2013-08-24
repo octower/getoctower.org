@@ -5,6 +5,7 @@ body {
 
 .navbar {
     color: white;
+    border: 0;
 }
 
 .navbar-brand {
