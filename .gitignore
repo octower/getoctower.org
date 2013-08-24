@@ -1,4 +1,5 @@
 vendor
+composer.phar
 silex.phar
 octower-src/
 web/octower.phar

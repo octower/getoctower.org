@@ -1,0 +1,23 @@
+body {
+    font-family: "Convergence",sans-serif;
+    background: white;
+}
+
+.navbar {
+    color: white;
+}
+
+.navbar-brand {
+    color: white;
+    background: #ecc217;
+}
+
+.navbar-nav a {
+    text-transform: uppercase;
+    color: #333;
+}
+
+.navbar-nav a:hover {
+    background: transparent;
+    text-decoration: underline;
+}
