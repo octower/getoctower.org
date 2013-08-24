@@ -41,3 +41,25 @@ a {
     margin: 0 0 10px 0;
     list-style: decimal outside none;
 }
+
+.container .jumbotron {
+    background: #ecc217;
+    color: #333;
+    margin-left: -15px;
+    margin-right: -15px;
+    border-radius: 0;
+}
+
+.container .jumbotron h1 {
+    color: white;
+    font-size: 1.6em;
+}
+
+.container .jumbotron h1 small {
+    color: #333;
+    text-transform: uppercase;
+}
+
+footer {
+    text-align: center;
+}

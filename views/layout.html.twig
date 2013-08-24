@@ -29,7 +29,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a href="./" class="navbar-brand">Octower</a>
+            <a href="{{ app.request.basePath }}/" class="navbar-brand">OcTower</a>
         </div>
         <nav class="collapse navbar-collapse pull-right" role="navigation">
             <ul class="nav navbar-nav">
@@ -37,16 +37,16 @@
                     <a class="{{ page is defined and page == 'getting-started' ? 'active':'' }}" href="{{ path('docs.view', {page: '00-intro.md'}) }}">Getting started</a>
                 </li>
                 <li>
-                    <a class="{{ page == 'download' ? 'active':'' }}" href="{{ path('download') }}">Download</a>
+                    <a class="{{ page is defined and page == 'download' ? 'active':'' }}" href="{{ path('download') }}">Download</a>
                 </li>
                 <li>
-                    <a class="{{ page == 'docs' ? 'active':'' }}" href="{{ path('docs') }}">Documentation</a>
+                    <a class="{{ page is defined and page == 'docs' ? 'active':'' }}" href="{{ path('docs') }}">Documentation</a>
                 </li>
                 <li>
                     <a href="https://github.com/octower/octower/issues">Issues</a>
                 </li>
                 <li>
-                    <a href="https://github.com/octower/octower">Github</a>
+                    <a href="https://github.com/octower/octower"><i class="icon-github"></i>&nbsp;Github</a>
                 </li>
             </ul>
         </nav>
