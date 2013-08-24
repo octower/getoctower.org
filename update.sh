@@ -16,16 +16,16 @@ fi
 
 cd "$root/$build"
 
-if [ ! -d "$root/$build/composer.phar" ]
-then
-    curl -sS https://getcomposer.org/installer | php
-fi
+#if [ ! -d "$root/$build/composer.phar" ]
+#then
+#    curl -sS https://getcomposer.org/installer | php
+#fi
 
 # update master
 git fetch -q origin && \
 git fetch --tags -q origin && \
 git checkout develop -q && \
-#git rebase origin/develop -q && \
+git rebase origin/develop&& \
 $composer install -q && \
 php -d phar.readonly=0 $buildscript && \
 mv $buildphar "$root/$target/$buildphar" && \
