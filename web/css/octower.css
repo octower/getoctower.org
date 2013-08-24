@@ -21,3 +21,23 @@ body {
     background: transparent;
     text-decoration: underline;
 }
+
+a {
+    color: #ecc217;
+}
+
+.fork-and-edit {
+    background: url("../img/github.gif") no-repeat scroll 0 0 transparent;
+    font-style: italic;
+    height: 40px;
+    margin: 40px auto 0;
+    max-width: 580px;
+    padding-top: 5px;
+    padding-left: 40px;
+}
+
+.toc, .toc ul {
+    padding-left: 40px;
+    margin: 0 0 10px 0;
+    list-style: decimal outside none;
+}
