@@ -10,7 +10,7 @@ body {
 
 .navbar-brand {
     color: white;
-    background: #ecc217;
+    background: #d9750b;
 }
 
 .navbar-nav a {
@@ -24,7 +24,7 @@ body {
 }
 
 a {
-    color: #ecc217;
+    color: #d9750b;
 }
 
 .fork-and-edit {
@@ -44,7 +44,7 @@ a {
 }
 
 .container .jumbotron {
-    background: #ecc217;
+    background: #d9750b;
     color: #333;
     margin-left: -15px;
     margin-right: -15px;
