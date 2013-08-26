@@ -18,7 +18,7 @@ $app['twig'] = $app->share($app->extend('twig', function($twig, $app) {
     return $twig;
 }));
 
-$app['octower.doc_dir'] = __DIR__.'/../vendor/octower/octower/doc';
+$app['octower.doc_dir'] = __DIR__.'/../octower-src/doc';
 
 $app['markdown'] = function () {
     return new MarkdownExtraParser();
