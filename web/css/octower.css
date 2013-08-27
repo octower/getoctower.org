@@ -64,3 +64,17 @@ a {
 footer {
     text-align: center;
 }
+
+.icon-bar {
+    background: #d9750b;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+    .navbar-collapse {
+        margin-left: 0;
+        margin-right: 0;
+
+        padding-left: 5px;
+        padding-right: 0;
+    }
+}
