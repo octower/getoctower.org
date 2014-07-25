@@ -6,7 +6,6 @@ use Silex\Application;
 use Silex\Provider\TwigServiceProvider;
 use Silex\Provider\UrlGeneratorServiceProvider;
 use Silex\Provider\ValidatorServiceProvider;
-use dflydev\markdown\MarkdownExtraParser;
 
 $app = new Application();
 $app->register(new UrlGeneratorServiceProvider());
@@ -21,7 +20,7 @@ $app['twig'] = $app->share($app->extend('twig', function($twig, $app) {
 $app['octower.doc_dir'] = __DIR__.'/../octower-src/doc';
 
 $app['markdown'] = function () {
-    return new MarkdownExtraParser();
+    return new Parsedown();
 };
 
 return $app;
