@@ -8,7 +8,7 @@ buildphar="octower.phar"
 target="web"
 repo="https://github.com/octower/octower.git"
 branch="develop"
-composer="php composer.phar"
+composer="php $root/composer.phar"
 
 # init
 if [ ! -d "$root/$build" ]
