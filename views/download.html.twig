@@ -2,15 +2,28 @@
 
 {% block content %}
     <h1>Download Octower</h1>
+
     <p>Run this in your terminal to get the latest Octower version:</p>
     <code>curl -sS https://getoctower.org/installer | php</code>
+
     <p>Or if you don't have curl:</p>
     <code>php -r "eval('?>'.file_get_contents('https://getoctower.org/installer'));"</code>
+
     <p>This installer script will simply check some php.ini settings, warn you if they are set incorrectly, and then download the latest octower.phar in the current directory</p>
 
     <h2>Installer Options</h2>
+
+    <h3>--install-dir</h3>
     <p>You can install octower to a specific directory by using the <code>--install-dir</code> option and providing a target directory. Options must be appended to <code>--</code> so that PHP ignores them, like <code>-- --install-dir=bin</code>, example:</p>
     <code>curl -sS https://getoctower.org/installer | php -- --install-dir=bin</code>
+
+    <h3>--filename</h3>
+    <p>You can specify the filename (default: octower.phar) using the <code>--filename</code> option. example:</p>
+    <code>curl -sS https://getoctower.org/installer | php -- --filename=octower</code>
+
+    <h3>--version</h3>
+    <p>You can install composer to a specific release by using the <code>--version</code> option and providing a target release. example:</p>
+    <code>curl -sS https://getoctower.org/installer | php -- --version=1.0.0</code>
 
     {#
         <h2>Windows Installer</h2>
