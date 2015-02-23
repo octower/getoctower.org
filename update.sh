@@ -36,15 +36,15 @@ git log --pretty="%H" -n1 HEAD > "$root/$target/version"
 
 # create tagged releases
 for version in `git tag`; do
-    if [ ! -f "$root/$target/download/$version/$buildphar" ]
+    if [ ! -f "$root/$target/releases/$version/$buildphar" ]
     then
-        mkdir -p "$root/$target/download/$version/"
+        mkdir -p "$root/$target/releases/$version/"
         git checkout ${version} -q && \
         ${composer} install -q && \
         php -d phar.readonly=0 ${buildscript} && \
         touch --date="`git log -n1 --pretty=%ci ${version}`" ${buildphar} && \
-        mv ${buildphar} "$root/$target/download/$version/$buildphar"
+        mv ${buildphar} "$root/$target/releases/$version/$buildphar"
     else
-        touch --date="`git log -n1 --pretty=%ci ${version}`" "$root/$target/download/$version/$buildphar"
+        touch --date="`git log -n1 --pretty=%ci ${version}`" "$root/$target/releases/$version/$buildphar"
     fi
 done
