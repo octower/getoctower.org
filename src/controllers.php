@@ -40,7 +40,8 @@ $app->get('/download/', function () use ($app) {
 
 $app->get('/releases/{version}/composer.phar', function () {
     return new Response('Version Not Found', 404);
-});
+})
+->bind('download_version');
 
 /**
  * Docuementation Page
