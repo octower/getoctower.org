@@ -22,7 +22,7 @@ $app->get('/', function () use ($app) {
  */
 $app->get('/download/', function () use ($app) {
     $versions = array();
-    foreach (glob(__DIR__.'/../web/download/*', GLOB_ONLYDIR) as $version) {
+    foreach (glob(__DIR__.'/../web/releases/*', GLOB_ONLYDIR) as $version) {
         $versions[basename($version)] = new \DateTime('@'.filemtime($version.'/octower.phar'));
     }
 
@@ -38,7 +38,7 @@ $app->get('/download/', function () use ($app) {
     return $app['twig']->render('download.html.twig', $data);
 })->bind('download');
 
-$app->get('/download/{version}/composer.phar', function () {
+$app->get('/releases/{version}/composer.phar', function () {
     return new Response('Version Not Found', 404);
 });
 
