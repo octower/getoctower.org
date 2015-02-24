@@ -21,6 +21,8 @@ $app->get('/', function () use ($app) {
  * Template : download.html.twig
  */
 $app->get('/download/', function () use ($app) {
+    $latestSnapshotDate = new \DateTime('@'.filemtime($__DIR__.'/../web/octower.phar'));
+    
     $versions = array();
     foreach (glob(__DIR__.'/../web/releases/*', GLOB_ONLYDIR) as $version) {
         $versions[basename($version)] = new \DateTime('@'.filemtime($version.'/octower.phar'));
@@ -31,6 +33,7 @@ $app->get('/download/', function () use ($app) {
 
     $data = array(
         'page' => 'download',
+        'latestSnapshotDate' => $latestSnapshotDate,
         'versions' => $versions,
         'windows' => false !== strpos($app['request']->headers->get('User-Agent'), 'Windows'),
     );
