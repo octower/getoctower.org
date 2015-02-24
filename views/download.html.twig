@@ -34,7 +34,7 @@
     <h2>Manual Download</h2>
     <p>If you prefer to download the phar manually, here are the available versions:</p>
     <p>
-        <a href="{{ app.request.basePath }}/octower.phar">Latest Snapshot</a> ({{ lastestSnapshotDate|date('Y-m-d') }})<br />
+        <a href="{{ app.request.basePath }}/octower.phar">Latest Snapshot</a> ({{ latestSnapshotDate|date('Y-m-d') }})<br />
         {% for version, date in versions %}
             <a href="{{ path('download_version', {version: version}) }}">{{ version }}</a> ({{ date|date('Y-m-d') }})<br />
         {% endfor %}
